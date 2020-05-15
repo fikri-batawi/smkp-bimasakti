@@ -24,7 +24,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // $config['base_url'] = 'http://localhost/Web-SMKP/';
-$config['base_url'] = 'http://smkp.kulon-ti.com/';
+// $config['base_url'] = 'http://smkp.kulon-ti.com/';
+$config['base_url'] = 'http://smkp.alshamart.com/';
 
 /*
 |--------------------------------------------------------------------------
