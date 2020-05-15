@@ -74,7 +74,7 @@ $pages_menu = [
                 <!-- RD Navbar Toggle-->
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                 <!-- RD Navbar Brand-->
-                <div class="rd-navbar-brand"><a class="brand" href="index.html"><img class="brand-logo-dark" src=<?= base_url("assets/logo/logo-bimasakti.png") ?> alt="" width="245" height="50" /><img class="brand-logo-light" src=<?= base_url("assets/logo/logo-bimasakti.png") ?> alt="" width="245" height="50" /></a>
+                <div class="rd-navbar-brand"><a class="brand" href="<?= base_url('home')?>"><img class="brand-logo-dark" src=<?= base_url("assets/logo/logo-bimasakti.png") ?> alt="" width="245" height="50" /><img class="brand-logo-light" src=<?= base_url("assets/logo/logo-bimasakti.png") ?> alt="" width="245" height="50" /></a>
                 </div>
               </div>
               <div class="rd-navbar-nav-wrap">
