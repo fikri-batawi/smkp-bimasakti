@@ -16,6 +16,14 @@ $pages_menu = [
     'title' => 'Tentang',
     'url'   => 'about'
   ],
+  [
+    'title' => 'Masuk',
+    'url'   => 'auth'
+  ],
+  [
+    'title' => 'Keluar',
+    'url'   => 'auth/logout'
+  ]
 ]
 ?>
 
@@ -74,25 +82,46 @@ $pages_menu = [
                 <!-- RD Navbar Toggle-->
                 <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                 <!-- RD Navbar Brand-->
-                <div class="rd-navbar-brand"><a class="brand" href="<?= base_url('home')?>"><img class="brand-logo-dark" src=<?= base_url("assets/logo/logo-bimasakti.png") ?> alt="" width="245" height="50" /><img class="brand-logo-light" src=<?= base_url("assets/logo/logo-bimasakti.png") ?> alt="" width="245" height="50" /></a>
+                <div class="rd-navbar-brand"><a class="brand" href="<?= base_url('home') ?>"><img class="brand-logo-dark" src=<?= base_url("assets/logo/logo-bimasakti.png") ?> alt="" width="245" height="50" /><img class="brand-logo-light" src=<?= base_url("assets/logo/logo-bimasakti.png") ?> alt="" width="245" height="50" /></a>
                 </div>
               </div>
               <div class="rd-navbar-nav-wrap">
                 <!-- RD Navbar Nav		-->
 
-                <ul class="rd-navbar-nav">
-                  <?php foreach($pages_menu as $page) : ?>
-                  <?php if($title == $page['title']) : ?>
-                  <li class="rd-nav-item active"><a class="rd-nav-link" href=<?= site_url($page['url']) ?>><?= $page['title'] ?></a>
-                  </li>
-                  <?php else : ?>
-                    <li class="rd-nav-item"><a class="rd-nav-link" href=<?= site_url($page['url']) ?>><?= $page['title'] ?></a>
-                  </li>
-                    <?php endif ?>
-                  <?php endforeach ?>
+                <?php if (!$user) : ?>
+                  <!-- Tidak Login -->
+                  <ul class="rd-navbar-nav">
+                    <?php foreach ($pages_menu as $page) : ?>
+                      <?php if ($page['title'] != 'Alumni' && $page['title'] != 'Keluar') : ?>
+                        <?php if ($title == $page['title']) : ?>
+                          <li class="rd-nav-item active"><a class="rd-nav-link" href=<?= site_url($page['url']) ?>><?= $page['title'] ?></a>
+                          </li>
+                        <?php else : ?>
+                          <li class="rd-nav-item"><a class="rd-nav-link" href=<?= site_url($page['url']) ?>><?= $page['title'] ?></a>
+                          </li>
+                        <?php endif ?>
+                      <?php endif ?>
+                    <?php endforeach ?>
+                  </ul>
+
                   
-                  </li>
-                </ul>
+                <?php else : ?>
+                  <!-- Login -->
+                  <ul class="rd-navbar-nav">
+                    <?php foreach ($pages_menu as $page) : ?>
+                      <?php if ($page['title'] != 'Masuk') : ?>
+                        <?php if ($title == $page['title']) : ?>
+                          <li class="rd-nav-item active"><a class="rd-nav-link" href=<?= site_url($page['url']) ?>><?= $page['title'] ?></a>
+                          </li>
+                        <?php else : ?>
+                          <li class="rd-nav-item"><a class="rd-nav-link" href=<?= site_url($page['url']) ?>><?= $page['title'] ?></a>
+                          </li>
+                        <?php endif ?>
+                      <?php endif ?>
+                    <?php endforeach ?>
+                  </ul>
+                <?php endif ?>
+
               </div>
             </div>
           </div>

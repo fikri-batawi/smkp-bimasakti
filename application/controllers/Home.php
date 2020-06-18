@@ -13,6 +13,9 @@ class Home extends CI_Controller {
                 $data['about'] = $this->db->get_where('content',['type' => 'about'])->row_array();
                 $data['galery'] = $this->db->get_where('content',['type' => 'galery'])->result_array();
 
+                // User Login
+                $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
                 // course
                 $data['course'] = $this->db->get('course')->result_array();
 
