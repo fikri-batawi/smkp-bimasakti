@@ -75,20 +75,21 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'smkp_bimasakti',
+	
+	// 'hostname' => 'localhost',
+	// 'username' => 'root',
+	// 'password' => '',
+	// 'database' => 'smkp_bimasakti',
 
 	// 'hostname' => 'localhost',
 	// 'username' => 'kulw5212_smkp',
 	// 'password' => '992010fikri',
 	// 'database' => 'kulw5212_smpk_bimasakti',
 
-	// 'hostname' => 'localhost',
-	// 'username' => 'alsn3496_admin',
-	// 'password' => 'alshamartadmin',
-	// 'database' => 'alsn3496_test',
+	'hostname' => 'localhost',
+	'username' => 'alsn3496_admin',
+	'password' => 'alshamartadmin',
+	'database' => 'alsn3496_test',
 
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
